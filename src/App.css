@@ -36,3 +36,65 @@
     transform: rotate(360deg);
   }
 }
+.scoreBoard{
+  display:flex;
+  border: 1px solid black;
+  background-color: peachpuff;
+}
+.scoreBanner{
+  display:flex;
+  justify-content: space-around;
+background-color:rgb(172, 138, 76);
+}
+
+.Team2{
+  text-align: left;
+  justify-content: flex-start;
+  width:50%;
+}
+.Team1{
+  
+  text-align: right;
+  width:50%;
+}
+
+.Home{
+  border: black solid 5px;
+font-size: 30px;
+text-align: center;
+}
+.Away{
+  border: black solid 5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+img{
+  width: 200px;
+  height: 200px;
+}
+p{
+  color:rgb(34, 119, 218);
+  margin-right: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#shoot, button{
+  background-color: darkorange;
+  font-size: 30px;
+}
+button, #reset{
+  background-color: purple;
+  font-size: 30px;
+}
+h3{
+  font-size: 25px;
+  color:purple;
+  font-family: sans-serif;
+}
+h2{
+  text-align: center;
+  background-color: peru;
+  padding:0;
+  margin:0;
+  font-size: 30px;
+}
