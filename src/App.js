@@ -17,16 +17,16 @@ function App() {
   return (
     <div>
     <Game venue="Smoothie King Stadium" Team1Name="Warriors" Team2Name="Wildcats" 
-      Team1Logo={<img src={warriorLogo} alt="no image"/>}
-      Team2Logo={<img src={wildcatLogo} alt="" />}
+      Team1Logo={warriorLogo}
+      Team2Logo={wildcatLogo}
       />
       <Game venue="Hops & Fire Arena" Team1Name="Sharks" Team2Name="Pioneers"
-      Team1Logo={<img src={sharksLogo} alt=""/>}
-      Team2Logo={<img src={pioneersLogo} alt=""/>}
+      Team1Logo={sharksLogo}
+      Team2Logo={pioneersLogo}
       />
       <Game venue="The Thunder Dome" Team1Name="Bulldogs" Team2Name="Raptors"
-      Team1Logo={<img src={bulldogsLogo} alt=""/>}
-      Team2Logo={<img src={raptorsLogo} alt=""/>}
+      Team1Logo={bulldogsLogo}
+      Team2Logo={raptorsLogo}
       />
       </div>
   );

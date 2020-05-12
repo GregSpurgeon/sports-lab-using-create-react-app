@@ -5,7 +5,7 @@ function Team(props){
   console.log(props)
           return(
             <React.Fragment>
-              <h3>{props.name}<br/> {props.logo}</h3>
+              <h3>{props.name}<br/> <img src={props.logo} alt="logo"></img></h3>
               <button id="shoot" onClick ={props.handleShoot}>Shoot</button>
               <p>Shots <br/>{numShots}</p>
               <p>Shot Percentage<br/>{percentMade}% </p>
