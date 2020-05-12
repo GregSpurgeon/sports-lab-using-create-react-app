@@ -1,6 +1,8 @@
 import React,{Component} from'react';
 import Team from '../team/Team';
-import '../../index.css'
+ 
+
+
 
 
 class Game extends Component{
@@ -22,9 +24,11 @@ class Game extends Component{
           numShots: 0,
           score: 0,
           percentMade: null,
-          },
+          }
           
       }
+      this.swish = new Audio('././assets/Swish.wav')
+      this.cheering = new Audio('././assets/cheering.wav')
     };
 resetCounter=(team)=>{
   this.setState((state,props) =>{
@@ -46,8 +50,7 @@ resetCounter=(team)=>{
       }
     })
 }
-    swish = new Audio('./Swish+2.wav')
-    cheering = new Audio('./cheering1.wav')
+
 
     shotsTaken = (team) =>{
           this.setState((state,props) =>{
@@ -64,6 +67,7 @@ resetCounter=(team)=>{
         }
         
     scoreABucket = (team) =>{
+      
           this.setState((state,props) =>{
             return{
               ...state,
@@ -73,12 +77,11 @@ resetCounter=(team)=>{
               }
             };
           });
-          setTimeout(()=>this.swish.play(),3700)
         }
-
-    ShotPercentage=(team)=>{
-        this.setState((state,props) =>{
-          return{
+        
+        ShotPercentage=(team)=>{
+          this.setState((state,props) =>{
+            return{
               ...state,
               [team]:{
                 ...state[team],
@@ -88,13 +91,15 @@ resetCounter=(team)=>{
           });
         }
         
-    handleShoot =(team)=>{
+        handleShoot =(team)=>{
           this.shotsTaken(team)
           if(Math.random() <=.4){
             this.scoreABucket(team)
+            setTimeout(()=>{this.swish.play()},3700)
           }
           this.ShotPercentage(team)
         }
+        
     render(){
       const {count}= this.state;
     return( 
@@ -107,17 +112,17 @@ resetCounter=(team)=>{
             <div className="Away"> Away <br /> {this.state.Team2.score}</div>
         </div>
          <div className="scoreBoard">
-          <p className="Home"> 
+          <p className="Team1"> 
             <Team data={this.state.Team1} 
             name={this.props.Team1Name} 
             logo={this.props.Team1Logo} 
-            handleShoot={()=>{this.handleShoot("Team1")}}/>
+            handleShoot={()=>this.handleShoot("Team1")}/>
             </p>
-          <p className="Away"> 
+          <p className="Team2"> 
             <Team data={this.state.Team2} 
             name={this.props.Team2Name}
             logo={this.props.Team2Logo}
-            handleShoot={()=>{this.handleShoot("Team2")}}/>
+            handleShoot={()=>this.handleShoot("Team2")}/>
             </p>   
            <p> <button id="reset" onClick={this.resetCounter}>Reset Game</button>
             <br/>{count}
