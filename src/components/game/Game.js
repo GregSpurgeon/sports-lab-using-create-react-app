@@ -124,7 +124,7 @@ resetCounter=(team)=>{
             logo={this.props.Team2Logo}
             handleShoot={()=>this.handleShoot("Team2")}/>
             </p>   
-           <p> <button id="reset" onClick={this.resetCounter}>Reset Game</button>
+           <p> <button id="reset" onClick={this.resetCounter}>Resets Game</button>
             <br/>{count}
             </p>
           </div>
